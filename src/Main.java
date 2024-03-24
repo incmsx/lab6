@@ -1,9 +1,5 @@
 import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static java.lang.System.clearProperty;
 import static java.lang.System.in;
 
 public class Main
