@@ -13,6 +13,12 @@ public class Location {
         this.name = name;
     }
 
+    public Location(Double x, Long y, Integer z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
     public Double getX() {
         return x;
     }
