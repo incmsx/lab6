@@ -1,12 +1,10 @@
 package Managers;
 
 import Commands.*;
-import Exceptions.WrongCommandException;
 import Interfaces.ICommand;
-
 import java.util.Hashtable;
+import java.util.NoSuchElementException;
 
-import static java.lang.System.in;
 
 // Invoker
 public class CommandSelector
@@ -15,9 +13,20 @@ public class CommandSelector
     public static String parseCommand(String line)
     {
         ICommand command = null;
-        String[] wordsInLine = line.split(" ");
-        String commandName = wordsInLine[0];
-
+        String commandName = "";
+        try
+        {
+            String[] wordsInLine = line.split(" ");
+            commandName = wordsInLine[0];
+        }
+        catch (ArrayIndexOutOfBoundsException exception)
+        {
+            System.out.println("Нужно команду ввести!");
+        }
+        catch (NoSuchElementException e)
+        {
+            System.out.println("Даже не пытайтесь сломать программу!");
+        }
         return commandName;
     }
 
@@ -25,8 +34,10 @@ public class CommandSelector
     {
         ICommand command = null;
         Hashtable<String,ICommand> commandCollection = getCommandsCollection();
-        for (String key : commandCollection.keySet()) {
-            if (key.equals(commandName.toLowerCase())) {
+        for (String key : commandCollection.keySet())
+        {
+            if (key.equals(commandName.toLowerCase()))
+            {
                 command = commandCollection.get(key);
                 return command;
             }

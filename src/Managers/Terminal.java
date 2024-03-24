@@ -24,7 +24,10 @@ public class Terminal {
     public void clear(){}
     public void save(){}
     public void executeScript(){}
-    public void exit(){}
+    public void exit()
+    {
+        System.exit(0);
+    }
     public void removeGreater(){}
     public void replaceIfLower(){}
     public void removeGreaterKey(){}
