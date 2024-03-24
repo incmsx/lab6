@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class ClearCommand implements Command{
+public class ClearCommand implements ICommand {
     Terminal terminal;
 
     public ClearCommand(Terminal terminal) {

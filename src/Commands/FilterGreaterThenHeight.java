@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class FilterGreaterThenHeight implements Command{
+public class FilterGreaterThenHeight implements ICommand {
     Terminal terminal;
 
     public FilterGreaterThenHeight(Terminal terminal) {

@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class ShowCommand implements Command{
+public class ShowCommand implements ICommand {
     Terminal terminal;
 
     public ShowCommand(Terminal terminal) {

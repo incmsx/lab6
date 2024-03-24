@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class RemoveKeyCommand implements Command{
+public class RemoveKeyCommand implements ICommand {
     Terminal terminal;
 
     public RemoveKeyCommand(Terminal terminal) {

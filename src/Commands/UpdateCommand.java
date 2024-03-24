@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class UpdateCommand implements Command{
+public class UpdateCommand implements ICommand {
     Terminal terminal;
 
     public UpdateCommand(Terminal terminal) {
@@ -9,6 +13,6 @@ public class UpdateCommand implements Command{
 
     @Override
     public void execute() {
-        terminal.insert();
+        terminal.update();
     }
 }

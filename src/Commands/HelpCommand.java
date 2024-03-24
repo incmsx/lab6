@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class HelpCommand implements Command{
+public class HelpCommand implements ICommand {
     Terminal terminal;
 
     public HelpCommand(Terminal terminal) {

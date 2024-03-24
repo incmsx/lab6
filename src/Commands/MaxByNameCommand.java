@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class MaxByNameCommand implements Command{
+public class MaxByNameCommand implements ICommand {
     Terminal terminal;
 
     public MaxByNameCommand(Terminal terminal) {

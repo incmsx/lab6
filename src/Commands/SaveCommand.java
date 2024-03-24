@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class SaveCommand implements Command{
+public class SaveCommand implements ICommand {
     Terminal terminal;
 
     public SaveCommand(Terminal terminal) {

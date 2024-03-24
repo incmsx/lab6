@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class PrintDescending implements Command{
+public class PrintDescending implements ICommand {
     Terminal terminal;
 
     public PrintDescending(Terminal terminal) {

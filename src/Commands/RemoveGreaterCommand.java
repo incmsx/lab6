@@ -1,6 +1,10 @@
 package Commands;
+
+import Interfaces.ICommand;
+import Managers.Terminal;
+
 //Receiver
-public class RemoveGreaterCommand implements Command{
+public class RemoveGreaterCommand implements ICommand {
     Terminal terminal;
 
     public RemoveGreaterCommand(Terminal terminal) {

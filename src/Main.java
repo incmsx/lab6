@@ -1,19 +1,23 @@
+import Managers.CommandInvoker;
+import Managers.CommandSelector;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.util.Scanner;
+
 import static java.lang.System.in;
 
 public class Main
 {
-    public static void main(String[] args) throws IOException {
-        while (true) {
+    public static void main(String[] args)
+    {
+        CommandInvoker invoker = new CommandInvoker(new CommandSelector());
 
-            BufferedInputStream bis = new BufferedInputStream(in);
-            int c = bis.read();
-            if (c > 100) {
-                break;
-            }
-            System.out.println(c);
+        while (true) {
+            System.out.print("shell>> ");
+            Scanner sc = new Scanner(in);
+            invoker.Execute(sc.nextLine());
         }
-        System.out.println("adsa");
     }
+
 }
