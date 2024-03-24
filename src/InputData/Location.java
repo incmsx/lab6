@@ -6,6 +6,13 @@ public class Location {
     private Integer z; //Поле не может быть null
     private String name; //Строка не может быть пустой, Поле может быть null
 
+    public Location(Double x, Long y, Integer z, String name) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+    }
+
     public Double getX() {
         return x;
     }

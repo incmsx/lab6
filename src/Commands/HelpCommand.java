@@ -15,4 +15,8 @@ public class HelpCommand implements ICommand {
     public void execute() {
         terminal.help();
     }
+    @Override public String toString()
+    {
+        return "help";
+    }
 }

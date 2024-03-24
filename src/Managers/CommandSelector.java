@@ -1,39 +1,61 @@
 package Managers;
 
 import Commands.*;
+import Exceptions.WrongCommandException;
 import Interfaces.ICommand;
 
 import java.util.Hashtable;
 
+import static java.lang.System.in;
+
 // Invoker
 public class CommandSelector
 {
-    public ICommand getCommand(String line)
+    static Terminal terminal = new Terminal();
+    public static String parseCommand(String line)
     {
+        ICommand command = null;
         String[] wordsInLine = line.split(" ");
         String commandName = wordsInLine[0];
-        ICommand command = null;
-        Terminal terminal = new Terminal();
 
-        switch (commandName.toLowerCase())
-        {
-            case "help" -> command = new HelpCommand(terminal);
-            case "info" -> command = new InfoCommand(terminal);
-            case "show" -> command = new ShowCommand(terminal);
-            case "insert" -> command = new InsertCommand(terminal);
-            case "update" -> command = new UpdateCommand(terminal);
-            case "remove_key" -> command = new RemoveKeyCommand(terminal);
-            case "clear" -> command = new ClearCommand(terminal);
-            case "save" -> command = new SaveCommand(terminal);
-            case "execute_script" -> command = new ExecuteScriptCommand(terminal);
-            case "exit" -> command = new ExitCommand(terminal);
-            case "remove_greater" -> command = new RemoveGreaterCommand(terminal);
-            case "replace_if_lower" -> command = new ReplaceIfLowerCommand(terminal);
-            case "remove_greater_key" -> command = new RemoveGreaterKeyCommand(terminal);
-            case "max_by_name" -> command = new MaxByNameCommand(terminal);
-            case "filter_greater_then_height" -> command = new FilterGreaterThenHeight(terminal);
-            case "print_descending" -> command = new PrintDescending(terminal);
+        return commandName;
+    }
+
+    public static ICommand getCommand(String commandName) throws NullPointerException
+    {
+        ICommand command = null;
+        Hashtable<String,ICommand> commandCollection = getCommandsCollection();
+        for (String key : commandCollection.keySet()) {
+            if (key.equals(commandName.toLowerCase())) {
+                command = commandCollection.get(key);
+                return command;
+            }
         }
         return command;
+    }
+
+    public static Hashtable<String, ICommand> getCommandsCollection()
+    {
+
+        Hashtable<String, ICommand> commands = new Hashtable<>();
+
+        commands.put("help",new HelpCommand(terminal));
+        commands.put("info",new InfoCommand(terminal));
+        commands.put("show",new ShowCommand(terminal));
+        commands.put("insert",new InsertCommand(terminal));
+        commands.put("update",new UpdateCommand(terminal));
+        commands.put("remove_key",new RemoveKeyCommand(terminal));
+        commands.put("clear",new ClearCommand(terminal));
+        commands.put("execute_script",new ExecuteScriptCommand(terminal));
+        commands.put("save",new SaveCommand(terminal));
+        commands.put("exit",new ExitCommand(terminal));
+        commands.put("remove_greater",new RemoveGreaterCommand(terminal));
+        commands.put("replace_if_lower",new ReplaceIfLowerCommand(terminal));
+        commands.put("remove_greater_key",new RemoveGreaterKeyCommand(terminal));
+        commands.put("max_by_name",new MaxByNameCommand(terminal));
+        commands.put("filter_greater_then_height",new FilterGreaterThenHeight(terminal));
+        commands.put("print_descending",new PrintDescending(terminal));
+
+        return commands;
     }
 }

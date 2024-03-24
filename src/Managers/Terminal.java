@@ -1,6 +1,7 @@
 package Managers;
 
 import Commands.HelpCommand;
+import Commands.InfoCommand;
 import Interfaces.ICommand;
 
 import java.util.Hashtable;
@@ -8,12 +9,6 @@ import java.util.Hashtable;
 //Receiver
 public class Terminal {
 
-//    public Hashtable<String, ICommand> getCommandsCollection()
-//    {
-//        Hashtable<String, ICommand> commands = new Hashtable<>();
-//        commands.put("help",new HelpCommand(this));
-//        return commands;
-//    }
     public void help()
     {
         System.out.println("Ничем не могу помочь...");

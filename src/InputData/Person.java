@@ -15,6 +15,19 @@ public class Person
     private Country nationality; //Поле может быть null
     private Location location; //Поле не может быть null
 
+    public Person(long id, String name, Coordinates coordinates, LocalDate creationDate, Integer height, Long weight, Color hairColor, Country nationality, Location location) {
+        idCounter += 1;
+        this.id = id;
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = creationDate;
+        this.height = height;
+        this.weight = weight;
+        this.hairColor = hairColor;
+        this.nationality = nationality;
+        this.location = location;
+    }
+
     public static long getIdCounter() {
         return idCounter;
     }

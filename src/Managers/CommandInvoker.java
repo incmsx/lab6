@@ -1,16 +1,21 @@
 package Managers;
 
+import Exceptions.WrongCommandException;
+import Interfaces.ICommand;
+
 //Inovoker
 public class CommandInvoker
 {
-    CommandSelector selector;
-
-    public CommandInvoker(CommandSelector selector) {
-        this.selector = selector;
-    }
-
-    public void Execute(String line)
+    public static void execute(String line)
     {
-        selector.getCommand(line).execute();
+        String commandName = CommandSelector.parseCommand(line);
+        try
+        {
+            CommandSelector.getCommand(commandName).execute();
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println("Введите корректную команду!");
+        }
     }
 }
