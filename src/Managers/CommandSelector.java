@@ -10,25 +10,6 @@ import java.util.NoSuchElementException;
 public class CommandSelector
 {
     static Terminal terminal = new Terminal();
-    public static String parseCommand(String line)
-    {
-        ICommand command = null;
-        String commandName = "";
-        try
-        {
-            String[] wordsInLine = line.split(" ");
-            commandName = wordsInLine[0];
-        }
-        catch (ArrayIndexOutOfBoundsException exception)
-        {
-            System.out.println("Нужно команду ввести!");
-        }
-        catch (NoSuchElementException e)
-        {
-            System.out.println("Даже не пытайтесь сломать программу!");
-        }
-        return commandName;
-    }
 
     public static ICommand getCommand(String commandName) throws NullPointerException
     {
@@ -47,7 +28,6 @@ public class CommandSelector
 
     public static Hashtable<String, ICommand> getCommandsCollection()
     {
-
         Hashtable<String, ICommand> commands = new Hashtable<>();
 
         commands.put("help",new HelpCommand(terminal));

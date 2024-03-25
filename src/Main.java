@@ -1,3 +1,4 @@
+import File.FileReader;
 import Managers.CommandInvoker;
 
 import java.io.BufferedInputStream;
@@ -13,25 +14,20 @@ public class Main
 
     public static void main(String[] args)
     {
-        String fileName = args[0];
-
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileName)))
+        while (true)
         {
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-
-            while ((bytesRead = bis.read(buffer)) != -1)
+            try
             {
-                System.out.write(buffer, 0, bytesRead);
+                FileReader.readFile(args[0]);
             }
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+            catch (ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Введите корректно путь к файлу.");
+                break;
+            }
 
-
-        while (true) {
-            try {
+            try
+            {
                 System.out.print("ввод>> ");
                 Scanner sc = new Scanner(in);
 
@@ -41,7 +37,6 @@ public class Main
             {
                 System.out.println("Программу то ломать не надо(");
             }
-
         }
     }
 }
