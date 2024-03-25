@@ -5,14 +5,15 @@ import Managers.Terminal;
 
 //Receiver
 public class ExitCommand implements ICommand {
-    Terminal terminal;
 
-    public ExitCommand(Terminal terminal) {
-        this.terminal = terminal;
+    @Override
+    public void execute()
+    {
+        System.exit(0);
     }
 
     @Override
-    public void execute() {
-        terminal.exit();
+    public String toString() {
+        return "exit: завершить программу (без сохранения в файл)";
     }
 }

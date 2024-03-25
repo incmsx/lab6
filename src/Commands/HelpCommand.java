@@ -5,15 +5,11 @@ import Managers.Terminal;
 
 //Receiver
 public class HelpCommand implements ICommand {
-    Terminal terminal;
-
-    public HelpCommand(Terminal terminal) {
-        this.terminal = terminal;
-    }
 
     @Override
-    public void execute() {
-        terminal.help();
+    public void execute()
+    {
+        System.out.println("Ничем не могу помочь...");
     }
     @Override public String toString()
     {

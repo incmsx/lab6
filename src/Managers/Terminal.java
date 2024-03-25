@@ -1,17 +1,11 @@
 package Managers;
 
-import Commands.HelpCommand;
-import Commands.InfoCommand;
-import Interfaces.ICommand;
-
-import java.util.Hashtable;
-
 //Receiver
 public class Terminal {
 
     public void help()
     {
-        System.out.println("Ничем не могу помочь...");
+
     }
     public void info()
     {
@@ -26,7 +20,7 @@ public class Terminal {
     public void executeScript(){}
     public void exit()
     {
-        System.exit(0);
+
     }
     public void removeGreater(){}
     public void replaceIfLower(){}

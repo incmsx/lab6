@@ -10,50 +10,21 @@ import java.io.*;
 
 public class FileReader
 {
-    private static String fileInfo;
-
     public static void readFile(String filePath)
     {
         File file = new File(filePath);
-//        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file)))
-//        {
-//            byte[] buffer = new byte[1024];
-//            int bytesRead;
-//
-//            while ((bytesRead = bis.read(buffer)) != -1)
-//            {
-//                fileInfo = new String(buffer,0,bytesRead);
-//            }
-//
-//            if (file.length() == 0)
-//            {
-//                System.out.println("Файл пустой.");
-//                System.exit(1);
-//            }
-//        }
-//        catch (IOException e)
-//        {
-//            if (!file.exists())
-//            {
-//                System.out.println("Файла не существует.");
-//            }
-//            if (!file.canRead())
-//            {
-//                System.out.println("Нет доступа к файлу.");
-//            }
-//            System.exit(1);
-//        }
-
         try
         {
-
-
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             Document document = null;
             document = dbf.newDocumentBuilder().parse(new BufferedInputStream(new FileInputStream(file)));
+            if (file.length() == 0)
+            {
+                System.out.println("Файл пустой.");
+                System.exit(1);
+            }
             Node node = document.getFirstChild();
 
-            System.out.println(node + "sfsfsdf");
         }
         catch (SAXException | ParserConfigurationException e)
         {
@@ -62,9 +33,17 @@ public class FileReader
         }
         catch (IOException e)
         {
-            System.exit(1);
-            throw new RuntimeException(e);
-        }
+            if (!file.exists())
+            {
+                System.out.println("Файла не существует.");
+                System.exit(1);
+            }
+            if (!file.canRead())
+            {
+                System.out.println("Нет доступа к файлу.");
+                System.exit(1);
+            }
 
+        }
     }
 }
