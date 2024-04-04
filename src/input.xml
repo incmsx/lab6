@@ -10,4 +10,38 @@
         <x>782</x>
         <y>123</y>
     </coordinates>>
+    <person>
+        <name>Игорь</name>
+        <coordinates>
+            <x>782</x>
+            <y>123</y>
+        </coordinates>>
+        <height>178</height>
+        <weight>75</weight>
+        <color>blue</color>
+        <country>france</country>
+        <location>
+            <x>0.22</x>
+            <y>788</y>
+            <z>1278</z>
+            <name></name>
+        </location>>
+    </person>
+    <person>
+        <name>lox</name>
+        <coordinates>
+            <x>782</x>
+            <y>123</y>
+        </coordinates>>
+        <height>178</height>
+        <weight>75</weight>
+        <color>blue</color>
+        <country>france</country>
+        <location>
+            <x>0.22</x>
+            <y>788</y>
+            <z>1278</z>
+            <name></name>
+        </location>>
+    </person>>
 </root>

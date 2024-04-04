@@ -1,6 +1,7 @@
 package File;
 
 import InputData.Location;
+import Managers.Parser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -61,69 +62,11 @@ public class FileReader
             }
             switch (roteChildren.item(i).getNodeName())
             {
-                case "location" -> parseLocation(roteChildren.item(i));
-                case "coordinates" -> parseCoordinates();
-                case "person" -> parsePerson();
+                case "location" -> System.out.println(Parser.parseLocation(roteChildren.item(i)));
+                case "coordinates" -> System.out.println(Parser.parseCoordinates(roteChildren.item(i)));
+                case "person" -> System.out.println(Parser.parsePerson(roteChildren.item(i)));
             }
         }
-    }
-
-    private static void parseLocation(Node location)
-    {
-        NodeList locationChildren = location.getChildNodes();
-
-        Double x = null;
-        Long y = null;
-        Integer z = null;
-        String name = null;
-
-        for (int i = 0; i < locationChildren.getLength(); i++)
-        {
-            if (locationChildren.item(i).getNodeType() != Node.ELEMENT_NODE)
-            {
-                continue;
-            }
-            try {
-                switch (locationChildren.item(i).getNodeName()) {
-                    case "x":
-                        x = Double.valueOf(locationChildren.item(i).getTextContent());
-                        break;
-                    case "y":
-                         y = Long.valueOf(locationChildren.item(i).getTextContent());
-                        break;
-                    case "z":
-                        z = Integer.valueOf(locationChildren.item(i).getTextContent());
-                        break;
-                    case "name":
-                        name = locationChildren.item(i).getTextContent();
-                        break;
-                }
-            }
-            catch (Exception e)
-            {
-                System.out.println("Unexpected value of " + locationChildren.item(i).getNodeName());
-            }
-        }
-        if(x != null && y != null && z != null)
-        {
-            Location location1 = new Location(x, y, z);
-            if (name.length() > 0)
-            {
-                location1.setName(name);
-            }
-            System.out.println(location1);
-        }
-
-    }
-
-    private static void parseCoordinates()
-    {
-
-    }
-
-    private static void parsePerson()
-    {
-
     }
 
     private static Document buildDocument(File file) throws ParserConfigurationException, IOException, SAXException

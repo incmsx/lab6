@@ -15,12 +15,27 @@ public class Person
     private Country nationality; //Поле может быть null
     private Location location; //Поле не может быть null
 
-    public Person(long id, String name, Coordinates coordinates, LocalDate creationDate, Integer height, Long weight, Color hairColor, Country nationality, Location location) {
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", hairColor=" + hairColor +
+                ", nationality=" + nationality +
+                ", location=" + location +
+                '}';
+    }
+
+    public Person(String name, Coordinates coordinates, Integer height, Long weight, Color hairColor, Country nationality, Location location) {
         idCounter += 1;
-        this.id = id;
+        this.id = idCounter;
         this.name = name;
         this.coordinates = coordinates;
-        this.creationDate = creationDate;
+        this.creationDate = LocalDate.now();
         this.height = height;
         this.weight = weight;
         this.hairColor = hairColor;
