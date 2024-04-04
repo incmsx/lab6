@@ -3,14 +3,10 @@ package Managers;
 import Commands.*;
 import Interfaces.ICommand;
 import java.util.Hashtable;
-import java.util.NoSuchElementException;
 
 
-// Invoker
 public class CommandSelector
 {
-    static Terminal terminal = new Terminal();
-
     public static ICommand getCommand(String commandName) throws NullPointerException
     {
         ICommand command = null;
@@ -26,26 +22,27 @@ public class CommandSelector
         return command;
     }
 
-    public static Hashtable<String, ICommand> getCommandsCollection()
+    private static Hashtable<String, ICommand> getCommandsCollection()
     {
+
         Hashtable<String, ICommand> commands = new Hashtable<>();
 
         commands.put("help",new HelpCommand());
-        commands.put("info",new InfoCommand(terminal));
-        commands.put("show",new ShowCommand(terminal));
-        commands.put("insert",new InsertCommand(terminal));
-        commands.put("update",new UpdateCommand(terminal));
-        commands.put("remove_key",new RemoveKeyCommand(terminal));
-        commands.put("clear",new ClearCommand(terminal));
-        commands.put("execute_script",new ExecuteScriptCommand(terminal));
-        commands.put("save",new SaveCommand(terminal));
+        commands.put("info",new InfoCommand());
+        commands.put("show",new ShowCommand());
+        commands.put("insert",new InsertCommand());
+        commands.put("update",new UpdateCommand());
+        commands.put("remove_key",new RemoveKeyCommand());
+        commands.put("clear",new ClearCommand());
+        commands.put("execute_script",new ExecuteScriptCommand());
+        commands.put("save",new SaveCommand());
         commands.put("exit",new ExitCommand());
-        commands.put("remove_greater",new RemoveGreaterCommand(terminal));
-        commands.put("replace_if_lower",new ReplaceIfLowerCommand(terminal));
-        commands.put("remove_greater_key",new RemoveGreaterKeyCommand(terminal));
-        commands.put("max_by_name",new MaxByNameCommand(terminal));
-        commands.put("filter_greater_then_height",new FilterGreaterThenHeight(terminal));
-        commands.put("print_descending",new PrintDescending(terminal));
+        commands.put("remove_greater",new RemoveGreaterCommand());
+        commands.put("replace_if_lower",new ReplaceIfLowerCommand());
+        commands.put("remove_greater_key",new RemoveGreaterKeyCommand());
+        commands.put("max_by_name",new MaxByNameCommand());
+        commands.put("filter_greater_then_height",new FilterGreaterThenHeight());
+        commands.put("print_descending",new PrintDescending());
 
         return commands;
     }

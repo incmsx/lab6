@@ -18,6 +18,10 @@ public class Location {
         this.y = y;
         this.z = z;
     }
+    public Location()
+    {
+
+    }
 
     public Double getX() {
         return x;
@@ -49,5 +53,15 @@ public class Location {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

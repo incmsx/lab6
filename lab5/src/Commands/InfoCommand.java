@@ -1,7 +1,6 @@
 package Commands;
 
 import Interfaces.ICommand;
-import Managers.Terminal;
 
 //Receiver
 public class InfoCommand implements ICommand {

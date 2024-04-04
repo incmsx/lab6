@@ -1,7 +1,7 @@
 package Managers;
 
 
-//Inovoker
+//Invoker
 public class CommandInvoker
 {
     public static void execute(String line)

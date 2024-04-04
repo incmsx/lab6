@@ -1,2 +1,25 @@
-123456
-7890
+<?xml version="1.0" encoding="UTF-8"?>
+<root Stage="Main">
+    <location>
+        <element>
+            <x> 3245.15</x>
+        </element>
+        <element>
+            <y> 4300</y>
+        </element>
+        <element>
+            <z> 7238</z>
+        </element>
+        <element>
+            <name> Личный кабинет</name>
+        </element>
+    </location>>
+    <coordinates>
+        <element>
+            <x> 782</x>
+        </element>
+        <element>
+            <y> 123</y>
+        </element>
+    </coordinates>>
+</root>

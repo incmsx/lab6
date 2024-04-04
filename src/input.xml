@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root Stage="Main">
     <location>
-        <element>
-            <x> 3245.15</x>
-        </element>
-        <element>
-            <y> 4300</y>
-        </element>
-        <element>
-            <z> 7238</z>
-        </element>
-        <element>
-            <name> Личный кабинет</name>
-        </element>
+        <x>0.053</x>
+        <y>4300</y>
+        <z>7238</z>
+        <name></name>
     </location>>
     <coordinates>
-        <element>
-            <x> 782</x>
-        </element>
-        <element>
-            <y> 123</y>
-        </element>
+        <x>782</x>
+        <y>123</y>
     </coordinates>>
 </root>

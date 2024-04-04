@@ -14,18 +14,17 @@ public class Main
 
     public static void main(String[] args)
     {
+        try
+        {
+            FileReader.readFile(args[0]);
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Введите корректно путь к файлу.");
+            System.exit(0);
+        }
         while (true)
         {
-            try
-            {
-                FileReader.readFile(args[0]);
-            }
-            catch (ArrayIndexOutOfBoundsException e)
-            {
-                System.out.println("Введите корректно путь к файлу.");
-                break;
-            }
-
             try
             {
                 System.out.print("ввод>> ");
