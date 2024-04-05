@@ -81,7 +81,8 @@ public class Parser
             {
                 continue;
             }
-            try {
+            try
+            {
                 switch (coordinatesChildren.item(i).getNodeName()) {
                     case "x":
                         x = Integer.valueOf(coordinatesChildren.item(i).getTextContent());

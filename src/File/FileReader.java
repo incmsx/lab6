@@ -1,6 +1,5 @@
 package File;
 
-import InputData.Location;
 import Managers.Parser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -10,8 +9,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class FileReader
 {
@@ -62,8 +60,8 @@ public class FileReader
             }
             switch (roteChildren.item(i).getNodeName())
             {
-                case "location" -> System.out.println(Parser.parseLocation(roteChildren.item(i)));
-                case "coordinates" -> System.out.println(Parser.parseCoordinates(roteChildren.item(i)));
+                case "location" -> System.out.println("Локация существуют только в контексте персонажа!");
+                case "coordinates" -> System.out.println("Координаты существуют только в контексте персонажа!");
                 case "person" -> System.out.println(Parser.parsePerson(roteChildren.item(i)));
             }
         }
