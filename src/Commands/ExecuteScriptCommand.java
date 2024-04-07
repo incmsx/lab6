@@ -6,7 +6,7 @@ import Interfaces.ICommand;
 public class ExecuteScriptCommand implements ICommand {
 
     @Override
-    public void execute(String argument, String element) {
+    public void execute(String[] args) {
 
     }
 }

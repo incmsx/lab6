@@ -5,7 +5,7 @@ import Interfaces.ICommand;
 //Receiver
 public class FilterGreaterThenHeight implements ICommand {
     @Override
-    public void execute(String argument, String element) {
+    public void execute(String[] args) {
 
     }
 }

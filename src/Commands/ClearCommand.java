@@ -10,7 +10,7 @@ import java.util.Hashtable;
 public class ClearCommand implements ICommand {
 
     @Override
-    public void execute(String args, String elem)
+    public void execute(String[] args)
     {
         CollectionManager.getPersonCollection().clear();
         CollectionManager.setInitilizationDate(null);

@@ -19,8 +19,7 @@ public class Parser
         String commandName = "";
         try
         {
-            String[] wordsInLine = line.split(" ");
-            commandName = wordsInLine[0];
+            commandName = parseInputLine(line)[0];
         }
         catch (ArrayIndexOutOfBoundsException exception)
         {
@@ -28,12 +27,11 @@ public class Parser
         }
         return commandName;
     }
-    public static String parseArgument(String line)
+    public static String parseArgument(String[] wordsInLine)
     {
         String argument = "";
         try
         {
-            String[] wordsInLine = line.split(" ");
             argument = wordsInLine[1];
         }
         catch (ArrayIndexOutOfBoundsException exception)
@@ -43,13 +41,12 @@ public class Parser
         return argument;
     }
 
-    public static String parseElement(String line)
+    public static String parseElement(String[] wordsInLine)
     {
         String element = "";
         try
         {
-            String[] wordsInLine = line.split("\\{ | \\}");
-            element = wordsInLine[2];
+            element = wordsInLine[3];
         }
         catch (ArrayIndexOutOfBoundsException exception)
         {

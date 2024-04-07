@@ -7,7 +7,7 @@ import Managers.CollectionManager;
 public class RemoveKeyCommand implements ICommand {
 
     @Override
-    public void execute(String argument, String element)
+    public void execute(String[] args)
     {
         CollectionManager.getPersonCollection();
     }

@@ -10,9 +10,8 @@ public class CommandInvoker
         try
         {
             String commandName = Parser.parseCommand(line);
-            String argument = Parser.parseArgument(line);
-            String element = Parser.parseElement(line);
-            CommandSelector.getCommand(commandName).execute(argument, element);
+            String[] args = Parser.parseInputLine(line);
+            CommandSelector.getCommand(commandName).execute(args);
         }
         catch (NullPointerException e)
         {

@@ -7,7 +7,7 @@ import Managers.CollectionManager;
 public class InfoCommand implements ICommand {
 
     @Override
-    public void execute(String argument, String element)
+    public void execute(String[] args)
     {
         System.out.println("Тип: "+CollectionManager.getPersonCollection().getClass().getSimpleName());
         System.out.println("Дата инициализации: " + CollectionManager.getInitilizationDate());
