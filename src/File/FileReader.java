@@ -1,5 +1,7 @@
 package File;
 
+import InputData.Person;
+import Managers.CollectionManager;
 import Managers.Parser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -16,8 +18,6 @@ public class FileReader
     public static void readFile(String filePath)
     {
         File file = new File(filePath);
-
-        System.out.println(file);
 
         Document document = null;
         try
@@ -58,11 +58,16 @@ public class FileReader
             {
                 continue;
             }
-            switch (roteChildren.item(i).getNodeName())
+            if(roteChildren.item(i).getNodeName().toLowerCase() == "person")
             {
-                case "location" -> System.out.println("Локация существуют только в контексте персонажа!");
-                case "coordinates" -> System.out.println("Координаты существуют только в контексте персонажа!");
-                case "person" -> System.out.println(Parser.parsePerson(roteChildren.item(i)));
+                Person person = (Parser.parsePerson(roteChildren.item(i)));
+                CollectionManager.addToCollection(person);
+                System.out.printf("Персонаж с  id = %s успешно добавлен в коллекцию! \n", person.getId());
+            }
+            else
+            {
+                System.out.println("В вашем файле ошибка!");
+                System.exit(0);
             }
         }
     }

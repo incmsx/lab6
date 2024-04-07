@@ -4,12 +4,11 @@ import Commands.*;
 import Interfaces.ICommand;
 import java.util.Hashtable;
 
-
 public class CommandSelector
 {
     public static ICommand getCommand(String commandName) throws NullPointerException
     {
-        ICommand command = null;
+        ICommand command;
         Hashtable<String,ICommand> commandCollection = getCommandsCollection();
         for (String key : commandCollection.keySet())
         {
@@ -19,12 +18,11 @@ public class CommandSelector
                 return command;
             }
         }
-        return command;
+        return null;
     }
 
     private static Hashtable<String, ICommand> getCommandsCollection()
     {
-
         Hashtable<String, ICommand> commands = new Hashtable<>();
 
         commands.put("help",new HelpCommand());

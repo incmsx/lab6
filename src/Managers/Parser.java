@@ -4,8 +4,16 @@ import InputData.*;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.util.Date;
+
 public class Parser
 {
+    public static String[] parseInputLine(String line)
+    {
+        String[] wordsInLine = line.split(" ");
+        return wordsInLine;
+    }
+
     public static String parseCommand(String line)
     {
         String commandName = "";
@@ -19,6 +27,35 @@ public class Parser
             System.out.println("Нужно команду ввести!");
         }
         return commandName;
+    }
+    public static String parseArgument(String line)
+    {
+        String argument = "";
+        try
+        {
+            String[] wordsInLine = line.split(" ");
+            argument = wordsInLine[1];
+        }
+        catch (ArrayIndexOutOfBoundsException exception)
+        {
+            System.out.println("Введите аргумент!");
+        }
+        return argument;
+    }
+
+    public static String parseElement(String line)
+    {
+        String element = "";
+        try
+        {
+            String[] wordsInLine = line.split("\\{ | \\}");
+            element = wordsInLine[2];
+        }
+        catch (ArrayIndexOutOfBoundsException exception)
+        {
+            System.out.println("Введите {элемент}.");
+        }
+        return element;
     }
 
     public static Location parseLocation(Node location)
@@ -157,6 +194,7 @@ public class Parser
                 && (height != null && height > 0) && (weight != null && weight > 0) &&
                 hairColor != null && nationality != null)
         {
+            CollectionManager.setInitilizationDate(new Date());
             return new Person(name, coordinates,height, weight, hairColor, nationality, location);
         }
         return null;

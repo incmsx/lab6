@@ -7,7 +7,7 @@ public class InsertCommand implements ICommand {
 
 
     @Override
-    public void execute() {
+    public void execute(String argument, String element) {
 
     }
 }

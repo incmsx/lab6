@@ -6,7 +6,7 @@ import Interfaces.ICommand;
 public class ExitCommand implements ICommand {
 
     @Override
-    public void execute()
+    public void execute(String argument, String element)
     {
         System.exit(0);
     }

@@ -6,10 +6,13 @@ public class CommandInvoker
 {
     public static void execute(String line)
     {
-        String commandName = Parser.parseCommand(line);
+
         try
         {
-            CommandSelector.getCommand(commandName).execute();
+            String commandName = Parser.parseCommand(line);
+            String argument = Parser.parseArgument(line);
+            String element = Parser.parseElement(line);
+            CommandSelector.getCommand(commandName).execute(argument, element);
         }
         catch (NullPointerException e)
         {

@@ -5,7 +5,7 @@ import Interfaces.ICommand;
 //Receiver
 public class MaxByNameCommand implements ICommand {
     @Override
-    public void execute() {
+    public void execute(String argument, String element) {
 
     }
 }

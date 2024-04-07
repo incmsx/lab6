@@ -6,7 +6,7 @@ import Interfaces.ICommand;
 public class HelpCommand implements ICommand {
 
     @Override
-    public void execute()
+    public void execute(String argument, String element)
     {
         System.out.println("Ничем не могу помочь...");
     }
