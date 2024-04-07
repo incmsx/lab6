@@ -27,17 +27,9 @@ public class Parser
         }
         return commandName;
     }
-    public static String parseArgument(String[] wordsInLine)
+    public static String parseArgument(String[] wordsInLine) throws NumberFormatException, ArrayIndexOutOfBoundsException
     {
-        String argument = "";
-        try
-        {
-            argument = wordsInLine[1];
-        }
-        catch (ArrayIndexOutOfBoundsException exception)
-        {
-            System.out.println("Введите аргумент!");
-        }
+        String argument = wordsInLine[1];
         return argument;
     }
 
