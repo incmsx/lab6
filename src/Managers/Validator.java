@@ -1,5 +1,7 @@
 package Managers;
 
+import InputData.Color;
+
 public class Validator
 {
     public static boolean isInputOk(String input)
@@ -10,18 +12,6 @@ public class Validator
             return false;
         }
         return true;
-    }
-    public static <T> boolean checkConversion(String value, Class<T> dataType) {
-        try
-        {
-            T convertedValue = dataType.getConstructor(String.class).newInstance(value);
-            return true;
-        }
-        catch (Exception e)
-        {
-            System.out.println("Неверный тип данных.");
-            return false;
-        }
     }
 
     public static boolean isCoordinateXOk(String input)
@@ -120,5 +110,33 @@ public class Validator
         return true;
     }
 
+    public static <T> boolean checkConversion(String value, Class<T> dataType) {
+        try
+        {
+            T convertedValue = dataType.getConstructor(String.class).newInstance(value);
+            return true;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Неверный тип данных.");
+            return false;
+        }
+    }
 
+    public static <T extends Enum<T>> boolean isEnumOk(String input, Class<T> enumClass)
+    {
+        if(!isInputOk(input))
+        {
+            return false;
+        }
+        for (T value: enumClass.getEnumConstants())
+        {
+            if(input.toUpperCase().equals(String.valueOf(value)))
+            {
+                return true;
+            }
+        }
+        System.out.println("Введите существующее значение ^^^ ");
+        return false;
+    }
 }

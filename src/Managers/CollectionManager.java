@@ -35,6 +35,16 @@ public class CollectionManager
         personCollection.put(KeyGenerator.generateKey(),person);
     }
 
+    public static void addToCollection(Person person, Long key)
+    {
+        if(person == null)
+        {
+            System.out.println("Не получилось добавить человека...");
+            System.exit(0);
+        }
+        personCollection.put(key,person);
+    }
+
     public static void showCollection()
     {
         for (Map.Entry<Long, Person> entry : personCollection.entrySet()) {

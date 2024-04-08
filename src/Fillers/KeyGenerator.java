@@ -8,8 +8,9 @@ public class KeyGenerator
     private static Long keyCounter = 0L;
     public static Long generateKey()
     {
-        var key = keyCounter;
+        Long key = keyCounter;
         usedKeys.add(key);
+
         keyCounter++;
 
         return key;
