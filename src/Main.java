@@ -1,9 +1,6 @@
-import File.FileReader;
+import Managers.FileReader;
 import Managers.CommandInvoker;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 

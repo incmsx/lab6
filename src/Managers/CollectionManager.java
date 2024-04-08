@@ -1,5 +1,6 @@
 package Managers;
 
+import Fillers.KeyGenerator;
 import InputData.Person;
 
 import java.util.Date;
@@ -31,7 +32,7 @@ public class CollectionManager
             System.out.println("Не получилось добавить человека...");
             System.exit(0);
         }
-        personCollection.put(person.getId(),person);
+        personCollection.put(KeyGenerator.generateKey(),person);
     }
 
     public static void showCollection()

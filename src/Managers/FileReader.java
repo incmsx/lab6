@@ -1,4 +1,4 @@
-package File;
+package Managers;
 
 import InputData.Person;
 import Managers.CollectionManager;

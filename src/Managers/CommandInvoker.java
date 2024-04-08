@@ -15,10 +15,6 @@ public class CommandInvoker
         }
         catch (NullPointerException e)
         {
-            for (String arg: args)
-            {
-                System.out.println(arg);
-            }
             System.out.println("Введите корректную команду!");
         }
     }
