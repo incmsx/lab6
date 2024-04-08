@@ -52,5 +52,18 @@ public class CollectionManager
         }
     }
 
+    public static  void removeElement(Long key)
+    {
+        Hashtable<Long, Person> personCollection = getPersonCollection();
+
+        if(personCollection.containsKey(key))
+        {
+            personCollection.remove(key);
+        }
+        else
+        {
+            System.out.printf("Элемента с ключом %s не существует \n", key);
+        }
+    }
 
 }

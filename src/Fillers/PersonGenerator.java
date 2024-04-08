@@ -39,6 +39,20 @@ public class PersonGenerator
         CollectionManager.addToCollection(person, key);
 
     }
+    public static Person generatePerson()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        generateName(scanner);
+        generateHeight(scanner);
+        generateWeight(scanner);
+        generateCoordinates(scanner);
+        generateLocation(scanner);
+        generateColor(scanner);
+        generateCountry(scanner);
+
+        return new Person(name, coordinates, height, weight, hairColor, nationality, location);
+    }
 
     private static void generateCountry(Scanner scanner)
     {

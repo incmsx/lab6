@@ -13,10 +13,10 @@ public class RemoveKeyCommand implements ICommand {
     @Override
     public void execute(String[] args)
     {
-        Long argument;
+        Long key;
         try
         {
-             argument = Long.parseLong(Parser.parseArgument(args));
+             key = Long.parseLong(Parser.parseArgument(args));
         }
         catch (NumberFormatException | ArrayIndexOutOfBoundsException e)
         {
@@ -24,15 +24,6 @@ public class RemoveKeyCommand implements ICommand {
             return;
         }
 
-        Hashtable<Long, Person> personCollection = CollectionManager.getPersonCollection();
-
-        if(personCollection.containsKey(argument))
-        {
-            personCollection.remove(argument);
-        }
-        else
-        {
-            System.out.printf("Элемента с ключом %s не существует \n", argument);
-        }
+        CollectionManager.removeElement(key);
     }
 }
