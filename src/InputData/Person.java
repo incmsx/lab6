@@ -2,7 +2,7 @@ package InputData;
 
 import java.time.LocalDate;
 
-public class Person
+public class Person implements Comparable<Person>
 {
     private static long idCounter;
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -121,5 +121,11 @@ public class Person
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @Override
+    public int compareTo(Person o)
+    {
+        return (int) (this.getId() - o.getId());
     }
 }
