@@ -29,5 +29,9 @@ public class FilterGreaterThenHeight implements ICommand {
         {
             System.out.println("Height элемента введена неправильно. ");
         }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Height элемента не введен. ");
+        }
     }
 }
