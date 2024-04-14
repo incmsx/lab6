@@ -11,6 +11,12 @@ import java.util.Map;
 //Receiver
 public class FilterGreaterThenHeight implements ICommand {
     @Override
+    public String toString() {
+        return "filter_greater_than_height height : вывести элементы, " +
+                "значение поля height которых больше заданного";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         Hashtable<Long, Person> personTable = CollectionManager.getPersonCollection();

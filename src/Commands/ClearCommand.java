@@ -15,4 +15,9 @@ public class ClearCommand implements ICommand {
         CollectionManager.getPersonCollection().clear();
         CollectionManager.setInitilizationDate(null);
     }
+
+    @Override
+    public String toString() {
+        return "clear : очистить коллекцию";
+    }
 }

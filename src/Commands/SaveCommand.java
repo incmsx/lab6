@@ -6,7 +6,14 @@ import Interfaces.ICommand;
 public class SaveCommand implements ICommand {
 
     @Override
-    public void execute(String[] args) {
+    public String toString()
+    {
+        return "save : сохранить коллекцию в файл";
+    }
+
+    @Override
+    public void execute(String[] args)
+    {
 
     }
 }

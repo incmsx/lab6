@@ -10,6 +10,12 @@ import java.util.Hashtable;
 public class InfoCommand implements ICommand {
 
     @Override
+    public String toString() {
+        return "info : вывести в стандартный поток вывода информацию о коллекции " +
+                "(тип, дата инициализации, количество элементов и т.д.)";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         System.out.println("Тип: "+CollectionManager.getPersonCollection().getClass().getSimpleName());

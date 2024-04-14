@@ -21,7 +21,7 @@ public class CommandSelector
         return null;
     }
 
-    private static Hashtable<String, ICommand> getCommandsCollection()
+    public static Hashtable<String, ICommand> getCommandsCollection()
     {
         Hashtable<String, ICommand> commands = new Hashtable<>();
 

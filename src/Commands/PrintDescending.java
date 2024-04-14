@@ -15,6 +15,11 @@ import java.util.stream.Stream;
 public class PrintDescending implements ICommand {
 
     @Override
+    public String toString() {
+        return "print_descending : вывести элементы коллекции в порядке убывания";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         Hashtable<Long, Person> personHashtable = CollectionManager.getPersonCollection();

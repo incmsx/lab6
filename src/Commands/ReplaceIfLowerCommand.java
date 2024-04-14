@@ -10,6 +10,11 @@ import Managers.Parser;
 public class ReplaceIfLowerCommand implements ICommand {
 
     @Override
+    public String toString() {
+        return "replace_if_lowe null {element} : заменить значение по ключу, если новое значение меньше старого";
+    }
+
+    @Override
     public void execute(String[] args)
     {
 

@@ -15,6 +15,11 @@ import java.util.Map;
 public class RemoveGreaterCommand implements ICommand
 {
     @Override
+    public String toString() {
+        return "remove_greater {element} : удалить из коллекции все элементы, превышающие заданный";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         Person addedPerson = PersonGenerator.generatePerson();

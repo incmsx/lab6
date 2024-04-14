@@ -14,6 +14,11 @@ public class UpdateCommand implements ICommand {
 
 
     @Override
+    public String toString() {
+        return "update id {element} : обновить значение элемента коллекции, id которого равен заданному";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         Hashtable<Long, Person> personTable = CollectionManager.getPersonCollection();

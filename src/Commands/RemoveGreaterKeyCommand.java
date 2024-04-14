@@ -10,6 +10,11 @@ import java.util.*;
 //Receiver
 public class RemoveGreaterKeyCommand implements ICommand {
     @Override
+    public String toString() {
+        return "remove_greater_key null : удалить из коллекции все элементы, ключ которых превышает заданный";
+    }
+
+    @Override
     public void execute(String[] args)
     {
 

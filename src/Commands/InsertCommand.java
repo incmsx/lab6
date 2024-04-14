@@ -9,6 +9,11 @@ public class InsertCommand implements ICommand {
 
 
     @Override
+    public String toString() {
+        return "insert null {element} : добавить новый элемент с заданным ключом";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         try

@@ -14,4 +14,10 @@ public class MaxByNameCommand implements ICommand
     {
         System.out.println(CollectionManager.getPersonCollection().values().stream().max(new NameComparator()));
     }
+
+    @Override
+    public String toString() {
+        return "max_by_name : вывести любой объект из коллекции, " +
+                "значение поля name которого является максимальным";
+    }
 }

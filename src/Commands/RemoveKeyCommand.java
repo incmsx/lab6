@@ -11,6 +11,11 @@ import java.util.Hashtable;
 public class RemoveKeyCommand implements ICommand {
 
     @Override
+    public String toString() {
+        return "remove_key null : удалить элемент из коллекции по его ключу";
+    }
+
+    @Override
     public void execute(String[] args)
     {
         Long key;
