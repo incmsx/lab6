@@ -12,14 +12,14 @@ public class RemoveGreaterKeyCommand implements ICommand {
     @Override
     public void execute(String[] args)
     {
-        Hashtable<Long, Person> personTable = CollectionManager.getPersonCollection();
 
         try
         {
             Long argKey = Long.valueOf(Parser.parseArgument(args));
 
-            Set<Long> keys = personTable.keySet();
+            Set<Long> keys = CollectionManager.getPersonCollection().keySet();
             List<Long> keysToRemove = new ArrayList<>();
+
             for (Long key : keys)
             {
                 if (argKey < key)
@@ -30,7 +30,7 @@ public class RemoveGreaterKeyCommand implements ICommand {
             }
             for (Long key : keysToRemove)
             {
-                personTable.remove(key);
+                CollectionManager.removeElement(key);
             }
         }
         catch (NumberFormatException e)

@@ -17,17 +17,16 @@ public class Person implements Comparable<Person>
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", height=" + height +
-                ", weight=" + weight +
-                ", hairColor=" + hairColor +
-                ", nationality=" + nationality +
-                ", location=" + location +
-                '}';
+        return "Person: \n" +
+                "id = " + id +
+                ", \nname ='" + name + '\'' +
+                ", \ncoordinates: \n" + coordinates +
+                ", \ncreationDate = " + creationDate +
+                ", \nheight = " + height +
+                ", \nweight = " + weight +
+                ", \nhairColor = " + hairColor +
+                ", \nnationality = " + nationality +
+                ", \nlocation: \n" + location;
     }
 
     public Person(String name, Coordinates coordinates, Integer height, Long weight, Color hairColor, Country nationality, Location location) {
@@ -126,6 +125,6 @@ public class Person implements Comparable<Person>
     @Override
     public int compareTo(Person o)
     {
-        return (int) (this.getId() - o.getId());
+        return this.getCoordinates().getX() - o.getCoordinates().getX();
     }
 }

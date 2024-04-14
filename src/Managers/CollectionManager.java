@@ -49,6 +49,7 @@ public class CollectionManager
     {
         for (Map.Entry<Long, Person> entry : personCollection.entrySet()) {
             System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue().toString());
+            System.out.println("");
         }
     }
 
