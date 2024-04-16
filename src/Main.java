@@ -1,3 +1,4 @@
+import Managers.FileHandler;
 import Managers.FileReader;
 import Managers.CommandInvoker;
 
@@ -13,7 +14,8 @@ public class Main
     {
         try
         {
-            FileReader.readFile(args[0]);
+            FileHandler.setFile(args[0]);
+            FileReader.readFile(FileHandler.getFile());
         }
         catch (ArrayIndexOutOfBoundsException e)
         {

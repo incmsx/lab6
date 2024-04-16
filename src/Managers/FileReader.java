@@ -15,9 +15,13 @@ import java.io.*;
 
 public class FileReader
 {
-    public static void readFile(String filePath)
+    public static void readFile(File file)
     {
-        File file = new File(filePath);
+        if(file.length() == 0)
+        {
+            System.out.println("Файл пустой");
+            return;
+        }
 
         Document document = null;
         try
