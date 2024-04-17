@@ -1,8 +1,6 @@
 package Managers;
 
 import InputData.Person;
-import Managers.CollectionManager;
-import Managers.Parser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -11,7 +9,6 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
-
 
 public class FileReader
 {
@@ -62,7 +59,8 @@ public class FileReader
             {
                 continue;
             }
-            if(roteChildren.item(i).getNodeName().toLowerCase() == "person")
+            if(roteChildren.item(i).getNodeName().toLowerCase() == "person"
+                    || roteChildren.item(i).getNodeName().toLowerCase() == "InputData.Person")
             {
                 Person person = (Parser.parsePerson(roteChildren.item(i)));
                 CollectionManager.addToCollection(person);
@@ -71,7 +69,8 @@ public class FileReader
             else
             {
                 System.out.println("В вашем файле ошибка!");
-                System.exit(0);
+//                System.exit(0);
+                return;
             }
         }
     }

@@ -67,4 +67,20 @@ public class CollectionManager
         }
     }
 
+    @Override
+    public String toString() {
+        if (personCollection.isEmpty())
+        {
+            return "Колекция пустая";
+        }
+        StringBuilder info = new StringBuilder();
+
+        for(Map.Entry<Long, Person> entry : personCollection.entrySet())
+        {
+            info.append(entry.getValue());
+        }
+        info.append("\n\n");
+        return info.toString();
+    }
+
 }

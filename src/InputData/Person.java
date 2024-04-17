@@ -18,10 +18,10 @@ public class Person implements Comparable<Person>
     @Override
     public String toString() {
         return "Person: \n" +
-                "id = " + id +
+//                "id = " + id +
                 ", \nname ='" + name + '\'' +
                 ", \ncoordinates: \n" + coordinates +
-                ", \ncreationDate = " + creationDate +
+//                ", \ncreationDate = " + creationDate +
                 ", \nheight = " + height +
                 ", \nweight = " + weight +
                 ", \nhairColor = " + hairColor +
