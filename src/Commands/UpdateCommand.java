@@ -10,14 +10,24 @@ import java.util.Hashtable;
 import java.util.Map;
 
 //Receiver
+/**
+ * Класс UpdateCommand реализует интерфейс ICommand и представляет команду обновления значения элемента в коллекции.
+ */
 public class UpdateCommand implements ICommand {
 
-
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды обновления элемента коллекции.
+     */
     @Override
     public String toString() {
         return "update id {element} : обновить значение элемента коллекции, id которого равен заданному";
     }
 
+    /**
+     * Выполняет команду обновления элемента коллекции.
+     * @param args Массив строковых аргументов, содержащих id элемента для обновления.
+     */
     @Override
     public void execute(String[] args)
     {
@@ -39,6 +49,6 @@ public class UpdateCommand implements ICommand {
         {
             System.out.println("Id элемента введен неправильно. ");
         }
-
     }
 }
+

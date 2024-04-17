@@ -8,16 +8,27 @@ import Managers.Parser;
 import java.util.*;
 
 //Receiver
+/**
+ * Класс RemoveGreaterKeyCommand реализует интерфейс ICommand и представляет команду удаления из коллекции всех элементов, ключ которых превышает заданный.
+ */
 public class RemoveGreaterKeyCommand implements ICommand {
+
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды удаления из коллекции всех элементов, ключ которых превышает заданный.
+     */
     @Override
     public String toString() {
         return "remove_greater_key null : удалить из коллекции все элементы, ключ которых превышает заданный";
     }
 
+    /**
+     * Выполняет команду удаления из коллекции всех элементов, ключ которых превышает заданный.
+     * @param args Массив строковых аргументов, содержащих заданный ключ.
+     */
     @Override
     public void execute(String[] args)
     {
-
         try
         {
             Long argKey = Long.valueOf(Parser.parseArgument(args));
@@ -40,11 +51,12 @@ public class RemoveGreaterKeyCommand implements ICommand {
         }
         catch (NumberFormatException e)
         {
-            System.out.println("Ключ элемента введена неправильно. ");
+            System.out.println("Ключ элемента введен неправильно.");
         }
         catch (ArrayIndexOutOfBoundsException e)
         {
-            System.out.println("Ключ элемента не введен. ");
+            System.out.println("Ключ элемента не введен.");
         }
     }
 }
+

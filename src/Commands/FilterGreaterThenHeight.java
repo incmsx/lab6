@@ -9,13 +9,25 @@ import java.util.Hashtable;
 import java.util.Map;
 
 //Receiver
+/**
+ * Класс FilterGreaterThenHeight реализует интерфейс ICommand и представляет команду фильтрации элементов по полю height.
+ */
 public class FilterGreaterThenHeight implements ICommand {
+
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды фильтрации элементов по полю height.
+     */
     @Override
     public String toString() {
         return "filter_greater_than_height height : вывести элементы, " +
                 "значение поля height которых больше заданного";
     }
 
+    /**
+     * Выполняет команду фильтрации элементов по полю height.
+     * @param args Массив строковых аргументов. Первый аргумент - значение высоты для фильтрации.
+     */
     @Override
     public void execute(String[] args)
     {
@@ -33,11 +45,12 @@ public class FilterGreaterThenHeight implements ICommand {
         }
         catch (NumberFormatException e)
         {
-            System.out.println("Height элемента введена неправильно. ");
+            System.out.println("Высота элемента введена неправильно.");
         }
         catch (ArrayIndexOutOfBoundsException e)
         {
-            System.out.println("Height элемента не введен. ");
+            System.out.println("Высота элемента не введена.");
         }
     }
 }
+

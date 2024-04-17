@@ -7,13 +7,24 @@ import Managers.CollectionManager;
 import Managers.Parser;
 
 //Receiver
+/**
+ * Класс ReplaceIfLowerCommand реализует интерфейс ICommand и представляет команду замены значения по ключу, если новое значение меньше старого.
+ */
 public class ReplaceIfLowerCommand implements ICommand {
 
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды замены значения по ключу, если новое значение меньше старого.
+     */
     @Override
     public String toString() {
         return "replace_if_lowe null {element} : заменить значение по ключу, если новое значение меньше старого";
     }
 
+    /**
+     * Выполняет команду замены значения по ключу, если новое значение меньше старого.
+     * @param args Массив строковых аргументов, содержащих ключ элемента и новое значение для замены.
+     */
     @Override
     public void execute(String[] args)
     {
@@ -53,3 +64,4 @@ public class ReplaceIfLowerCommand implements ICommand {
         }
     }
 }
+

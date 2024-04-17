@@ -29,6 +29,7 @@ public class SaveCommand implements ICommand {
         try (PrintWriter writer = new PrintWriter(FileHandler.getFile()))
         {
             writer.println(xStream.toXML(CollectionManager.getPersonCollection()));
+            System.exit(0);
         } catch (FileNotFoundException e)
         {
             System.err.println("File not found: " + e.getMessage());

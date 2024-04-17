@@ -8,12 +8,24 @@ import java.util.Date;
 
 public class Parser
 {
+    /**
+     * Разбирает входную строку на отдельные слова.
+     *
+     * @param line входная строка для разбора
+     * @return массив слов, на которые разбита входная строка
+     */
     public static String[] parseInputLine(String line)
     {
         String[] wordsInLine = line.split(" ");
         return wordsInLine;
     }
 
+    /**
+     * Извлекает команду из строки.
+     *
+     * @param line строка, содержащая команду
+     * @return имя команды
+     */
     public static String parseCommand(String line)
     {
         String commandName = "";
@@ -27,12 +39,26 @@ public class Parser
         }
         return commandName;
     }
+    /**
+     * Извлекает аргумент из массива слов.
+     *
+     * @param wordsInLine массив слов, полученный из входной строки
+     * @return аргумент команды
+     * @throws NumberFormatException если аргумент не удалось преобразовать в число
+     * @throws ArrayIndexOutOfBoundsException если не удалось получить аргумент из массива слов
+     */
     public static String parseArgument(String[] wordsInLine) throws NumberFormatException, ArrayIndexOutOfBoundsException
     {
         String argument = wordsInLine[1];
         return argument;
     }
 
+    /**
+     * Извлекает элемент из массива слов.
+     *
+     * @param wordsInLine массив слов, полученный из входной строки
+     * @return элемент
+     */
     public static String parseElement(String[] wordsInLine)
     {
         String element = "";
@@ -47,6 +73,12 @@ public class Parser
         return element;
     }
 
+    /**
+     * Разбирает узел XML для получения объекта Location.
+     *
+     * @param location узел XML, представляющий местоположение
+     * @return объект Location, созданный на основе данных из узла XML
+     */
     public static Location parseLocation(Node location)
     {
         NodeList locationChildren = location.getChildNodes();
@@ -94,6 +126,13 @@ public class Parser
         }
         return null;
     }
+
+    /**
+     * Разбирает узел XML для получения объекта Person.
+     *
+     * @param personNode узел XML, представляющий персону
+     * @return объект Person, созданный на основе данных из узла XML
+     */
     public static Coordinates parseCoordinates(Node coordinatesNode)
     {
         NodeList coordinatesChildren = coordinatesNode.getChildNodes();
@@ -130,6 +169,12 @@ public class Parser
         return null;
     }
 
+    /**
+     * Разбирает узел XML для получения объекта Person.
+     *
+     * @param personNode узел XML, представляющий персону
+     * @return объект Person, созданный на основе данных из узла XML
+     */
     public static Person parsePerson(Node personNode)
     {
         NodeList personChildren = personNode.getChildNodes();

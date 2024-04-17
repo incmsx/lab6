@@ -11,10 +11,17 @@ import java.util.Scanner;
 import java.util.Stack;
 
 //Receiver
+/**
+ * Класс ExecuteScriptCommand реализует интерфейс ICommand и представляет команду считывания и выполнения скрипта из файла.
+ */
 public class ExecuteScriptCommand implements ICommand {
 
     private static HashSet<String> handledScripts = new HashSet<>();
 
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды считывания и выполнения скрипта из файла.
+     */
     @Override
     public String toString() {
         return "execute_script file_name : считать и исполнить скрипт из указанного файла. " +
@@ -22,6 +29,10 @@ public class ExecuteScriptCommand implements ICommand {
                 "в котором их вводит пользователь в интерактивном режиме";
     }
 
+    /**
+     * Выполняет команду считывания и выполнения скрипта из файла.
+     * @param args Массив строковых аргументов. Первый аргумент - путь к файлу со скриптом.
+     */
     @Override
     public void execute(String[] args)
     {
@@ -65,7 +76,9 @@ public class ExecuteScriptCommand implements ICommand {
         {
             System.out.println("Файл не найден...");
         }
-        scanner.close();
+        if (scanner != null) {
+            scanner.close();
+        }
         handledScripts.remove(filePath);
     }
 }

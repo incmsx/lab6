@@ -4,6 +4,12 @@ import InputData.Color;
 
 public class Validator
 {
+    /**
+     * Проверяет, является ли входная строка пустой или null.
+     *
+     * @param input входная строка для проверки
+     * @return true, если строка не пустая и не null; false в противном случае
+     */
     public static boolean isInputOk(String input)
     {
         if(input.isEmpty() || input == null)
@@ -14,6 +20,12 @@ public class Validator
         return true;
     }
 
+    /**
+     * Проверяет, соответствует ли входная строка координате X.
+     *
+     * @param input входная строка для проверки
+     * @return true, если координата X корректна; false в противном случае
+     */
     public static boolean isCoordinateXOk(String input)
     {
         if(!isInputOk(input))
@@ -34,6 +46,12 @@ public class Validator
         return true;
     }
 
+    /**
+     * Проверяет, соответствует ли входная строка координате Y.
+     *
+     * @param input входная строка для проверки
+     * @return true, если координата Y корректна; false в противном случае
+     */
     public static boolean isCoordinateYOk(String input)
     {
         if(!isInputOk(input))
@@ -110,6 +128,14 @@ public class Validator
         return true;
     }
 
+    /**
+     * Проверяет возможность конвертации значения в указанный тип данных.
+     *
+     * @param value значение для конвертации
+     * @param dataType класс типа данных для конвертации
+     * @param <T> тип данных
+     * @return true, если конвертация возможна; false в противном случае
+     */
     public static <T> boolean checkConversion(String value, Class<T> dataType) {
         try
         {
@@ -123,6 +149,14 @@ public class Validator
         }
     }
 
+    /**
+     * Проверяет, соответствует ли входная строка значению перечислимого типа.
+     *
+     * @param input входная строка для проверки
+     * @param enumClass класс перечисления для сравнения
+     * @param <T> тип перечисления
+     * @return true, если входная строка соответствует одному из значений перечисления; false в противном случае
+     */
     public static <T extends Enum<T>> boolean isEnumOk(String input, Class<T> enumClass)
     {
         if(!isInputOk(input))

@@ -12,13 +12,24 @@ import java.util.List;
 import java.util.stream.Stream;
 
 //Receiver
+/**
+ * Класс PrintDescending реализует интерфейс ICommand и представляет команду вывода элементов коллекции в порядке убывания.
+ */
 public class PrintDescending implements ICommand {
 
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды вывода элементов коллекции в порядке убывания.
+     */
     @Override
     public String toString() {
         return "print_descending : вывести элементы коллекции в порядке убывания";
     }
 
+    /**
+     * Выполняет команду вывода элементов коллекции в порядке убывания.
+     * @param args Массив строковых аргументов. Не используется в данной команде.
+     */
     @Override
     public void execute(String[] args)
     {
@@ -27,3 +38,4 @@ public class PrintDescending implements ICommand {
         sorted.forEach(System.out::println);
     }
 }
+

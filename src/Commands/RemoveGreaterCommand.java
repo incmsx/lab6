@@ -12,13 +12,24 @@ import java.util.List;
 import java.util.Map;
 
 //Receiver
+/**
+ * Класс RemoveGreaterCommand реализует интерфейс ICommand и представляет команду удаления из коллекции всех элементов, превышающих заданный.
+ */
 public class RemoveGreaterCommand implements ICommand
 {
+    /**
+     * Возвращает описание команды в виде строки.
+     * @return Описание команды удаления из коллекции всех элементов, превышающих заданный.
+     */
     @Override
     public String toString() {
         return "remove_greater {element} : удалить из коллекции все элементы, превышающие заданный";
     }
 
+    /**
+     * Выполняет команду удаления из коллекции всех элементов, превышающих заданный элемент.
+     * @param args Массив строковых аргументов. Не используется в данной команде.
+     */
     @Override
     public void execute(String[] args)
     {
