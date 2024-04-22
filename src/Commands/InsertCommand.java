@@ -4,6 +4,8 @@ import Fillers.PersonGenerator;
 import Interfaces.ICommand;
 import Managers.Parser;
 
+import java.util.Scanner;
+
 //Receiver
 /**
  * Класс InsertCommand реализует интерфейс ICommand и представляет команду добавления нового элемента с заданным ключом в коллекцию.
@@ -26,8 +28,18 @@ public class InsertCommand implements ICommand {
     @Override
     public void execute(String[] args)
     {
-
-        PersonGenerator.generatePerson();
+        try
+        {
+            PersonGenerator.generatePerson(new Scanner(System.in));
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("Ключ элемента введен неправильно. ");
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Ключ элемента не введен. ");
+        }
 
     }
 }

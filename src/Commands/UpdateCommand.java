@@ -8,6 +8,7 @@ import Managers.Parser;
 
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Scanner;
 
 //Receiver
 /**
@@ -39,7 +40,7 @@ public class UpdateCommand implements ICommand {
             {
                 if (entry.getValue().getId() == targetId)
                 {
-                    Person person = PersonGenerator.generatePerson();
+                    Person person = PersonGenerator.generatePerson(new Scanner(System.in));
                     person.setId(targetId);
                     CollectionManager.addToCollection(person, entry.getKey());
                 }

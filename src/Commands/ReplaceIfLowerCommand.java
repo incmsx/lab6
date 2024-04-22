@@ -6,6 +6,8 @@ import Interfaces.ICommand;
 import Managers.CollectionManager;
 import Managers.Parser;
 
+import java.util.Scanner;
+
 //Receiver
 /**
  * Класс ReplaceIfLowerCommand реализует интерфейс ICommand и представляет команду замены значения по ключу, если новое значение меньше старого.
@@ -32,7 +34,7 @@ public class ReplaceIfLowerCommand implements ICommand {
         try
         {
             Long key = Long.valueOf(Parser.parseArgument(args));
-            Person addedPerson = PersonGenerator.generatePerson();
+            Person addedPerson = PersonGenerator.generatePerson(new Scanner(System.in));
 
             if(!CollectionManager.getPersonCollection().containsKey(key))
             {

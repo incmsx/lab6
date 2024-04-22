@@ -42,9 +42,8 @@ public class PersonGenerator
         KeyGenerator.addUsedKey(key);
 
     }
-    public static Person generatePerson()
+    public static Person generatePerson(Scanner scanner)
     {
-        Scanner scanner = new Scanner(System.in);
 
         generateName(scanner);
         generateHeight(scanner);
@@ -69,12 +68,12 @@ public class PersonGenerator
             System.out.println("------------");
 
             input = scanner.nextLine();
-
             if(!Validator.isEnumOk(input, Country.class))
             {
                 continue;
             }
             nationality = Country.valueOf(input.toUpperCase());
+            System.out.println(nationality);
             break;
         }
     }

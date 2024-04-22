@@ -1,6 +1,9 @@
 package Commands;
 
+import Fillers.PersonGenerator;
+import InputData.Person;
 import Interfaces.ICommand;
+import Managers.CollectionManager;
 import Managers.CommandInvoker;
 import Managers.Parser;
 
@@ -70,8 +73,16 @@ public class ExecuteScriptCommand implements ICommand {
                         continue;
                     }
                 }
-                isExecute = true;
-                CommandInvoker.execute(line);
+                if (line.trim().equals("insert"))
+                {
+                    System.out.println("\n\n");
+                    Person person = PersonGenerator.generatePerson(scanner);
+                    CollectionManager.addToCollection(person);
+                }
+                else
+                {
+                    CommandInvoker.execute(command);
+                }
             }
         }
         catch (FileNotFoundException e)

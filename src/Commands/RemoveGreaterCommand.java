@@ -6,10 +6,7 @@ import Interfaces.ICommand;
 import Managers.CollectionManager;
 import Managers.Parser;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //Receiver
 /**
@@ -33,7 +30,7 @@ public class RemoveGreaterCommand implements ICommand
     @Override
     public void execute(String[] args)
     {
-        Person addedPerson = PersonGenerator.generatePerson();
+        Person addedPerson = PersonGenerator.generatePerson(new Scanner(System.in));
         List<Long> keysToRemove = new ArrayList<>();
 
         for(Map.Entry<Long,Person> entry: CollectionManager.getPersonCollection().entrySet())
