@@ -17,21 +17,25 @@ public class FileReader {
     Читает содержимое файла и парсит его в объекты Person для добавления в коллекцию.
     @param file файл для чтения
      */
-    public static void readFile(File file) {
-        // Проверяем, пустой ли файл
-        if (file.length() == 0) {
-            System.out.println("Файл пустой");
-            return;
-        }
+    public static void readFile(File file)
+    {
 
         Document document = null;
-        try {
-            // Создаем XML-документ из файла
+        try
+        {
             document = buildDocument(file);
-        } catch (SAXException | ParserConfigurationException e) {
+        }
+        catch (SAXException | ParserConfigurationException e)
+        {
+            if (file.length() == 0) {
+                System.out.println("Файл пустой");
+                return;
+            }
             System.out.println("Не удалось распарсить.");
             System.exit(1);
-        } catch (Exception e) {
+        }
+        catch (IOException e)
+        {
             if (!file.exists()) {
                 System.out.println("Файла не существует.");
                 System.exit(1);
@@ -40,7 +44,10 @@ public class FileReader {
                 System.out.println("Нет доступа к файлу.");
                 System.exit(1);
             }
+
         }
+
+
 
         if (document == null) {
             System.out.println("Укажите полный путь к файлу...");

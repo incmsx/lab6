@@ -21,7 +21,11 @@ public class FileHandler
      */
     public static void setFile(String filePath)
     {
-        File file = new File(filePath);
-        FileHandler.file = file;
+        if(filePath.equals("dev/null") || filePath.equals("dev/random"))
+        {
+            System.out.println("Недопустимый файл");
+            System.exit(0);
+        }
+        FileHandler.file = new File(filePath);
     }
 }

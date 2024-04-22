@@ -26,6 +26,7 @@ public class PersonGenerator
             System.out.println("Элемент с заданным ключом уже существует.");
             return;
         }
+        System.out.println(KeyGenerator.getUsedKeys());
 
         generateName(scanner);
         generateHeight(scanner);
@@ -37,6 +38,7 @@ public class PersonGenerator
 
         Person person = new Person(name, coordinates, height, weight, hairColor, nationality, location);
         CollectionManager.addToCollection(person, key);
+        KeyGenerator.addUsedKey(key);
 
     }
     public static Person generatePerson()
@@ -110,7 +112,8 @@ public class PersonGenerator
 
     private static void generateHeight(Scanner scanner)
     {
-        while (true) {
+        while (true)
+        {
             System.out.print("Введите рост(Integer): ");
             input = scanner.nextLine();
             if(!Validator.isHeightOk(input))

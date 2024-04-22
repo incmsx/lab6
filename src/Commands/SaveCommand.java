@@ -1,16 +1,12 @@
 package Commands;
 
-import InputData.Coordinates;
-import InputData.Person;
 import Interfaces.ICommand;
 import Managers.CollectionManager;
 import Managers.FileHandler;
 import com.thoughtworks.xstream.XStream;
 
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.TreeMap;
 
 //Receiver
 public class SaveCommand implements ICommand {
@@ -28,7 +24,10 @@ public class SaveCommand implements ICommand {
     {
         try (PrintWriter writer = new PrintWriter(FileHandler.getFile()))
         {
+//            System.out.println(FileHandler.getFile());
             writer.println(xStream.toXML(CollectionManager.getPersonCollection()));
+            writer.close();
+//            System.out.println(xStream.toXML(CollectionManager.getPersonCollection()));
             System.exit(0);
         } catch (FileNotFoundException e)
         {

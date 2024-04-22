@@ -9,6 +9,11 @@ public class KeyGenerator
     public static Long generateKey()
     {
         Long key = keyCounter;
+        if (usedKeys.contains(key))
+        {
+            keyCounter++;
+            getUsedKeys();
+        }
         usedKeys.add(key);
 
         keyCounter++;
@@ -19,5 +24,10 @@ public class KeyGenerator
     public static HashSet<Long> getUsedKeys()
     {
         return usedKeys;
+    }
+
+    public static void addUsedKey(Long key)
+    {
+        usedKeys.add(key);
     }
 }
