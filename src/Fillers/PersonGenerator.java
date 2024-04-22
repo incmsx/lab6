@@ -19,6 +19,7 @@ public class PersonGenerator
 
     public static void generatePerson(Long key)
     {
+
         Scanner scanner = new Scanner(System.in);
 
         if(KeyGenerator.getUsedKeys().contains(key))
@@ -183,11 +184,11 @@ public class PersonGenerator
         while (true) {
             System.out.print("Введите имя(строка): ");
             input = scanner.nextLine();
-            if(!Validator.isInputOk(input))
+            if(!Validator.isInputOk(input.trim()))
             {
                 continue;
             }
-            name = input;
+            name = input.trim();
             break;
         }
     }

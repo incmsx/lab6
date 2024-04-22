@@ -18,6 +18,7 @@ public class ExecuteScriptCommand implements ICommand {
 
     private static HashSet<String> handledScripts = new HashSet<>();
 
+    private static boolean isExecute;
     /**
      * Возвращает описание команды в виде строки.
      * @return Описание команды считывания и выполнения скрипта из файла.
@@ -36,6 +37,7 @@ public class ExecuteScriptCommand implements ICommand {
     @Override
     public void execute(String[] args)
     {
+
         String filePath;
         try
         {
@@ -68,7 +70,7 @@ public class ExecuteScriptCommand implements ICommand {
                         continue;
                     }
                 }
-
+                isExecute = true;
                 CommandInvoker.execute(line);
             }
         }
@@ -80,5 +82,11 @@ public class ExecuteScriptCommand implements ICommand {
             scanner.close();
         }
         handledScripts.remove(filePath);
+        isExecute = false;
+    }
+
+    public static boolean isIsExecute()
+    {
+        return isExecute;
     }
 }

@@ -32,8 +32,6 @@ public class InfoCommand implements ICommand {
         System.out.println("Тип: "+CollectionManager.getPersonCollection().getClass().getSimpleName());
         System.out.println("Дата инициализации: " + CollectionManager.getInitilizationDate());
         System.out.println("Количество элементов: " + CollectionManager.getPersonCollection().size());
-
-        CollectionManager.showCollection();
     }
 }
 

@@ -217,6 +217,7 @@ public class Parser
                     case "weight":
                         weight  = Long.valueOf(personChildren.item(i).getTextContent());
                         break;
+                    default: break;
                 }
             }
             catch (Exception e)

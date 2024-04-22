@@ -11,8 +11,8 @@ public class Person implements Comparable<Person>
     private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private Integer height; //Поле не может быть null, Значение поля должно быть больше 0
     private Long weight; //Поле не может быть null, Значение поля должно быть больше 0
-    private Color hairColor; //Поле может быть null
-    private Country nationality; //Поле может быть null
+    private Color color; //Поле может быть null
+    private Country country; //Поле может быть null
     private Location location; //Поле не может быть null
 
     @Override
@@ -24,8 +24,8 @@ public class Person implements Comparable<Person>
 //                ", \ncreationDate = " + creationDate +
                 ", \nheight = " + height +
                 ", \nweight = " + weight +
-                ", \nhairColor = " + hairColor +
-                ", \nnationality = " + nationality +
+                ", \nhairColor = " + color +
+                ", \nnationality = " + country +
                 ", \nlocation: \n" + location;
     }
 
@@ -37,8 +37,8 @@ public class Person implements Comparable<Person>
         this.creationDate = LocalDate.now();
         this.height = height;
         this.weight = weight;
-        this.hairColor = hairColor;
-        this.nationality = nationality;
+        this.color = hairColor;
+        this.country = nationality;
         this.location = location;
     }
 
@@ -71,11 +71,11 @@ public class Person implements Comparable<Person>
     }
 
     public Color getHairColor() {
-        return hairColor;
+        return color;
     }
 
     public Country getNationality() {
-        return nationality;
+        return country;
     }
 
     public Location getLocation() {
@@ -111,11 +111,11 @@ public class Person implements Comparable<Person>
     }
 
     public void setHairColor(Color hairColor) {
-        this.hairColor = hairColor;
+        this.color = hairColor;
     }
 
     public void setNationality(Country nationality) {
-        this.nationality = nationality;
+        this.country = nationality;
     }
 
     public void setLocation(Location location) {
