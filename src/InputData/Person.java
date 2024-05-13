@@ -15,6 +15,9 @@ public class Person implements Comparable<Person>
     private Country country; //Поле может быть null
     private Location location; //Поле не может быть null
 
+    public Person(String name) {
+    }
+
     @Override
     public String toString() {
         return "Person: \n" +

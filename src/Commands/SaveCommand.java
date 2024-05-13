@@ -7,6 +7,7 @@ import com.thoughtworks.xstream.XStream;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 //Receiver
 public class SaveCommand implements ICommand {
@@ -24,10 +25,8 @@ public class SaveCommand implements ICommand {
     {
         try (PrintWriter writer = new PrintWriter(FileHandler.getFile()))
         {
-//            System.out.println(FileHandler.getFile());
             writer.println(xStream.toXML(CollectionManager.getPersonCollection()));
             writer.close();
-//            System.out.println(xStream.toXML(CollectionManager.getPersonCollection()));
             System.exit(0);
         } catch (FileNotFoundException e)
         {
